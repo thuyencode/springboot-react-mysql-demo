@@ -1,5 +1,5 @@
 {
-  "prettier.configPath": "prettier.config.js",
+  "prettier.configPath": "./frontend/prettier.config.js",
   "prettier.prettierPath": "./frontend/node_modules/prettier",
   "files.associations": {
     "*.css": "tailwindcss",
