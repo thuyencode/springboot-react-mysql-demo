@@ -1,3 +1,4 @@
+import { addUser } from '@/libs/api'
 import { type User, type UserFormErrorMessages } from '@/libs/types'
 import { parseUserFormData } from '@/libs/utils'
 import { redirect } from 'react-router-dom'
@@ -23,6 +24,8 @@ async function addUserAction({
   if (validationStatus !== true) {
     return { error: validationStatus }
   }
+
+  await addUser({ signal: request.signal, body: newUser })
 
   return redirect('/')
 }

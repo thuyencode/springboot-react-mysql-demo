@@ -13,9 +13,7 @@ export function parseUserFormData(
 
   const result = v.safeParse(UserFormSchema, user)
 
-  if (result.success === true) {
-    console.log(result.output)
-  } else {
+  if (!result.success) {
     const issues = v.flatten<typeof UserFormSchema>(result.issues).nested
 
     if (issues !== undefined) {

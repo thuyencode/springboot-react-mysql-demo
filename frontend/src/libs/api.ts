@@ -1,12 +1,10 @@
+/* eslint-disable @typescript-eslint/no-invalid-void-type */
 import Axios from 'axios'
-import { setupCache } from 'axios-cache-interceptor'
 import { type User } from './types'
 
-export const baseApi = setupCache(
-  Axios.create({
-    baseURL: import.meta.env.VITE_API_URL
-  })
-)
+export const baseApi = Axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+})
 
 export async function getUsers(options: {
   signal: AbortSignal
@@ -16,4 +14,25 @@ export async function getUsers(options: {
       signal: options.signal
     })
     .then((res) => res.data)
+}
+
+export async function addUser(options: {
+  signal: AbortSignal
+  body: Omit<User, 'id'>
+}): Promise<void> {
+  await baseApi
+    .post(
+      'user',
+      { ...options.body },
+      {
+        signal: options.signal,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    )
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 }
