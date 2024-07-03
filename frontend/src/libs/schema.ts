@@ -14,16 +14,16 @@ export const UserFormSchema = v.object({
   username: v.pipe(
     v.string(),
     v.trim(),
-    v.regex(/[^\s-]/, REGEX_WHITESPACE_ERROR),
     v.minLength(3, MIN_LENGTH_ERROR),
-    v.maxLength(255, MAX_LENGTH_ERROR)
+    v.maxLength(255, MAX_LENGTH_ERROR),
+    v.regex(/[^\s-]/, REGEX_WHITESPACE_ERROR)
   ),
   email: v.pipe(
     v.string(),
     v.trim(),
-    v.regex(/[^\s-]/, REGEX_WHITESPACE_ERROR),
-    v.email(),
     v.minLength(3, MIN_LENGTH_ERROR),
-    v.maxLength(255, MAX_LENGTH_ERROR)
+    v.maxLength(255, MAX_LENGTH_ERROR),
+    v.email(),
+    v.regex(/[^\s-]/, REGEX_WHITESPACE_ERROR)
   )
 })
