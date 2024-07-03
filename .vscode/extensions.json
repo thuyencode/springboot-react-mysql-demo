@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "vmware.vscode-boot-dev-pack",
+    "vscjava.vscode-java-pack",
+    "formulahendry.auto-complete-tag",
+    "redhat.vscode-xml",
+    "voldemortensen.rainbow-tags",
+    "cweijan.vscode-mysql-client2",
+    "christian-kohler.npm-intellisense",
+    "dbaeumer.vscode-eslint",
+    "burkeholland.simple-react-snippets",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "antfu.iconify"
+  ]
+}
