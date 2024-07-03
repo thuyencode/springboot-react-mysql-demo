@@ -1,14 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom'
-import RouteErrorBoundary from './RouteErrorBoundary'
+import RouteErrorBoundary from './boundaries/RouteErrorBoundary'
 import PageContainer from './layout/PageContainer'
-import HomePage from './pages/HomePage'
+import homePageRoute from './pages/Home'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <PageContainer />,
     errorElement: <RouteErrorBoundary />,
-    children: [{ index: true, element: <HomePage /> }]
+    children: [{ index: true, ...homePageRoute }]
   }
 ])
 
