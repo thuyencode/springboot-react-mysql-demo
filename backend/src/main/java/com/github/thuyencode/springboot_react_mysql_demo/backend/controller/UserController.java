@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.thuyencode.springboot_react_mysql_demo.backend.model.User;
 import com.github.thuyencode.springboot_react_mysql_demo.backend.repository.UserRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @CrossOrigin("http://localhost:5173")
 public class UserController {
@@ -18,7 +20,7 @@ public class UserController {
   private UserRepository repo;
 
   @PostMapping("/user")
-  public User addNewUser(@RequestBody User newUser) {
+  public User addNewUser(@Valid @RequestBody User newUser) {
     return repo.save(newUser);
   }
 
