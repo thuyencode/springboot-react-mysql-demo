@@ -33,5 +33,12 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     'multiline-ternary': 'off',
     '@typescript-eslint/indent': 'off'
+  },
+  parserOptions: {
+    project: [
+      './frontend/tsconfig.json',
+      './frontend/tsconfig.app.json',
+      './frontend/tsconfig.node.json'
+    ]
   }
 }
