@@ -1,5 +1,5 @@
 import { type ReactElement } from 'react'
-import UsersTable from './UsersTable'
+import UsersTable from './components/UsersTable'
 
 function HomePage(): ReactElement {
   return (
