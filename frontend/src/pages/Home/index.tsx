@@ -1,15 +1,14 @@
 import { getUsers } from '@/libs/api'
 import { type User } from '@/libs/types'
-import HomePage from './components/HomePage'
+import HomePage from './HomePage'
 
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-interface ProductPageLoader {
-  request: { signal: AbortSignal }
+interface ProductPageLoaderProps {
+  request: Request
 }
 
 async function loader({
   request: { signal }
-}: ProductPageLoader): Promise<User[]> {
+}: ProductPageLoaderProps): Promise<User[]> {
   return await getUsers({ signal })
 }
 
