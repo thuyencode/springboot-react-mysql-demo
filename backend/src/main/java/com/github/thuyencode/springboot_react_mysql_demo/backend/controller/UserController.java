@@ -1,6 +1,7 @@
 package com.github.thuyencode.springboot_react_mysql_demo.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,11 @@ public class UserController {
   @PostMapping("/user")
   public User addNewUser(@RequestBody User newUser) {
     return repo.save(newUser);
+  }
+
+  @GetMapping("/users")
+  public Iterable<User> getAllUsers() {
+    return repo.findAll();
   }
 
 }
