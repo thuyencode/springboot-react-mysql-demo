@@ -1,5 +1,6 @@
 package com.github.thuyencode.springboot_react_mysql_demo.backend.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,11 +14,16 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class User {
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
+  @Column(unique = true)
   private String username;
+
   private String name;
+
+  @Column(unique = true)
   private String email;
 }

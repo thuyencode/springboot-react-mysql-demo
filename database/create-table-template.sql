@@ -3,9 +3,9 @@ USE springboot_react;
 
 CREATE TABLE user (
     id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    email VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
     name VARCHAR(255),
-    username VARCHAR(255)
+    username VARCHAR(255) UNIQUE
 );
 
 DESC user;
