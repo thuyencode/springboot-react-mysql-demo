@@ -1,0 +1,3 @@
+-- Active: 1718635950751@@127.0.0.1@3306
+CREATE DATABASE springboot_react
+    DEFAULT CHARACTER SET = 'utf8mb4';
