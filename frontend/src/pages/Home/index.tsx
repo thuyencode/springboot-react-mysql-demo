@@ -10,7 +10,7 @@ interface ProductPageLoader {
 async function loader({
   request: { signal }
 }: ProductPageLoader): Promise<User[]> {
-  return getUsers({ signal })
+  return await getUsers({ signal })
 }
 
 const homePageRoute = {
