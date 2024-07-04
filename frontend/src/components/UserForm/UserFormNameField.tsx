@@ -1,17 +1,10 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type UserFormErrorMessages } from '@/libs/types'
 import { Icon } from '@iconify/react'
-import { useRef, type ReactElement } from 'react'
-import { useActionData } from 'react-router-dom'
+import { type ReactElement } from 'react'
 import AlertError from './AlertError'
+import useUserFormContext from './hook/useUserFormContext'
 
 function UserFormNameField(): ReactElement {
-  const error = useRef<UserFormErrorMessages>()
-  const actionData = useActionData() as { errors: UserFormErrorMessages }
-
-  if (actionData?.errors !== undefined) {
-    error.current = actionData.errors
-  }
+  const { getNameFieldError } = useUserFormContext()
 
   return (
     <div className='space-y-2'>
@@ -30,9 +23,8 @@ function UserFormNameField(): ReactElement {
           maxLength={255}
         />
       </div>
-      {error.current?.name ? (
-        <AlertError errorMessage={error.current.name} />
-      ) : null}
+
+      <AlertError errorMessage={getNameFieldError()} />
     </div>
   )
 }

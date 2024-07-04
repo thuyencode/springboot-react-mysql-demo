@@ -1,5 +1,5 @@
+import UserForm from '@/components/UserForm'
 import { type ReactElement } from 'react'
-import UserForm from './components/UserForm'
 
 function AddPage(): ReactElement {
   return (
