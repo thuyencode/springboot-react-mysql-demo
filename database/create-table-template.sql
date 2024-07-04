@@ -9,3 +9,5 @@ CREATE TABLE user (
 );
 
 DESC user;
+
+ALTER TABLE `user` AUTO_INCREMENT = 1;

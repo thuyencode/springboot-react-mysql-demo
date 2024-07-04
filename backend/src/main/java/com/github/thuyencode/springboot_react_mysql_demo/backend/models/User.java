@@ -14,8 +14,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @NoArgsConstructor
 public class User {
   private final String MIN_LENGTH_ERROR = "The minium length must longer than 3 characters";
@@ -24,16 +22,22 @@ public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Getter
+  @Setter
   private Long id;
 
   @Column(unique = true)
   @Size(min = 3, message = MIN_LENGTH_ERROR)
   @Size(max = 255, message = MAX_LENGTH_ERROR)
   @NoWhitespace
+  @Getter
+  @Setter
   private String username;
 
   @Size(min = 3, message = MIN_LENGTH_ERROR)
   @Size(max = 255, message = MAX_LENGTH_ERROR)
+  @Getter
+  @Setter
   private String name;
 
   @Column(unique = true)
@@ -41,5 +45,7 @@ public class User {
   @Size(max = 255, message = MAX_LENGTH_ERROR)
   @NoWhitespace
   @Email(message = EMAIL_ERROR)
+  @Getter
+  @Setter
   private String email;
 }
