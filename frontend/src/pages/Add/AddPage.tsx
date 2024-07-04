@@ -6,6 +6,7 @@ function AddPage(): ReactElement {
     <div className='hero-content flex-col gap-10' role='banner'>
       <UserForm>
         <UserForm.Title title='Add a new user' />
+        <UserForm.GeneralError />
         <UserForm.NameField />
         <UserForm.UsernameField />
         <UserForm.EmailField />

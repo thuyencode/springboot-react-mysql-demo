@@ -1,6 +1,5 @@
-import { addUser } from '@/libs/api'
 import { type User, type UserFormErrorMessages } from '@/libs/types'
-import { parseUserFormData } from '@/libs/utils'
+import { parseUserFormData, putUserFormData } from '@/libs/utils'
 import { redirect } from 'react-router-dom'
 import AddPage from './AddPage'
 
@@ -10,7 +9,7 @@ interface AddPageActionProps {
 
 async function addUserAction({
   request
-}: AddPageActionProps): Promise<{ error: UserFormErrorMessages } | Response> {
+}: AddPageActionProps): Promise<{ errors: UserFormErrorMessages } | Response> {
   const data = await request.formData()
 
   const newUser: Omit<User, 'id'> = {
@@ -22,10 +21,14 @@ async function addUserAction({
   const validationStatus = parseUserFormData(newUser)
 
   if (validationStatus !== true) {
-    return { error: validationStatus }
+    return { errors: validationStatus }
   }
 
-  await addUser({ signal: request.signal, body: newUser })
+  const serverValidationStatus = await putUserFormData(newUser, request.signal)
+
+  if (serverValidationStatus !== true) {
+    return { errors: serverValidationStatus }
+  }
 
   return redirect('/')
 }

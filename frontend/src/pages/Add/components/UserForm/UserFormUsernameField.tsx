@@ -7,10 +7,10 @@ import AlertError from './AlertError'
 
 function UserFormUsernameField(): ReactElement {
   const error = useRef<UserFormErrorMessages>()
-  const actionData = useActionData() as { error: UserFormErrorMessages }
+  const actionData = useActionData() as { errors: UserFormErrorMessages }
 
-  if (actionData?.error !== undefined) {
-    error.current = actionData.error
+  if (actionData?.errors !== undefined) {
+    error.current = actionData.errors
   }
 
   return (
@@ -30,8 +30,8 @@ function UserFormUsernameField(): ReactElement {
           maxLength={255}
         />
       </div>
-      {error.current?.usernameError ? (
-        <AlertError errorMessage={error.current.usernameError} />
+      {error.current?.username ? (
+        <AlertError errorMessage={error.current.username} />
       ) : null}
     </div>
   )
