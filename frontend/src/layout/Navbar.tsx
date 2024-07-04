@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react'
 import { type ReactElement } from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -20,10 +21,11 @@ function Navbar(): ReactElement {
         </NavLink>
         <NavLink
           className={({ isActive }: { isActive: boolean }) =>
-            isActive ? 'btn btn-disabled' : 'btn btn-outline'
+            isActive ? 'btn btn-disabled gap-1' : 'btn btn-outline gap-1'
           }
           to={'/add'}
         >
+          <Icon className='text-lg' icon={'mdi:user-add'} />
           Add User
         </NavLink>
       </div>
