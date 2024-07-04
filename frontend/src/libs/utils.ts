@@ -1,6 +1,6 @@
 import axios from 'axios'
 import * as v from 'valibot'
-import { addUser } from './api'
+import { addUser, putUser } from './api'
 import { UserFormSchema } from './schema'
 import { type User, type UserFormErrorMessages } from './types'
 
@@ -41,10 +41,26 @@ export function parseUserFormData(
   return true
 }
 
-export async function putUserFormData(
-  user: Omit<User, 'id'>,
+type SendUserFormDataProps = {
+  user: Omit<User, 'id'>
   signal: AbortSignal
-): Promise<UserFormErrorMessages | true> {
+} & (
+  | {
+      method: 'POST'
+      id?: undefined
+    }
+  | {
+      method: 'PUT'
+      id: string
+    }
+)
+
+export async function sendUserFormData({
+  user,
+  signal,
+  method,
+  id
+}: SendUserFormDataProps): Promise<UserFormErrorMessages | true> {
   const errorMessages: UserFormErrorMessages = {
     name: '',
     username: '',
@@ -53,7 +69,15 @@ export async function putUserFormData(
   }
 
   try {
-    await addUser({ signal, body: user })
+    switch (method) {
+      case 'POST':
+        await addUser({ signal, body: user })
+        break
+
+      case 'PUT':
+        await putUser({ signal, id, body: user })
+        break
+    }
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error(error)

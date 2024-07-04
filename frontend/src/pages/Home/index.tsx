@@ -2,13 +2,13 @@ import { getUsers } from '@/libs/api'
 import { type User } from '@/libs/types'
 import HomePage from './HomePage'
 
-interface ProductPageLoaderProps {
+interface HomePageLoaderProps {
   request: Request
 }
 
 async function loader({
   request: { signal }
-}: ProductPageLoaderProps): Promise<User[]> {
+}: HomePageLoaderProps): Promise<User[]> {
   return await getUsers({ signal })
 }
 

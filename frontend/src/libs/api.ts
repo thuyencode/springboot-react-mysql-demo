@@ -33,3 +33,31 @@ export async function addUser(options: {
       console.log(res.data)
     })
 }
+
+export async function getUser(options: {
+  signal: AbortSignal
+  id: string
+}): Promise<User> {
+  return await baseApi
+    .get(`user/${options.id}`, {
+      signal: options.signal
+    })
+    .then((res) => res.data)
+}
+
+export async function putUser(options: {
+  signal: AbortSignal
+  id: string
+  body: Omit<User, 'id'>
+}): Promise<User> {
+  return await baseApi
+    .put(
+      `user/${options.id}`,
+      { ...options.body },
+      {
+        signal: options.signal,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    )
+    .then((res) => res.data)
+}

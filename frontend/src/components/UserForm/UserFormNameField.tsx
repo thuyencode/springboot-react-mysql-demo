@@ -4,7 +4,7 @@ import AlertError from './AlertError'
 import useUserFormContext from './UserForm.hook'
 
 function UserFormNameField(): ReactElement {
-  const { nameFieldError } = useUserFormContext()
+  const { nameFieldValue, nameFieldError } = useUserFormContext()
 
   return (
     <div className='space-y-2'>
@@ -19,6 +19,7 @@ function UserFormNameField(): ReactElement {
           id='name'
           name='name'
           placeholder='Name...'
+          defaultValue={nameFieldValue}
           minLength={3}
           maxLength={255}
         />

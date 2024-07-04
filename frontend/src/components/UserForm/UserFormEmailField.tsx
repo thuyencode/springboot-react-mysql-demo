@@ -4,7 +4,7 @@ import AlertError from './AlertError'
 import useUserFormContext from './UserForm.hook'
 
 function UserFormEmailField(): ReactElement {
-  const { emailFieldError } = useUserFormContext()
+  const { emailFieldValue, emailFieldError } = useUserFormContext()
 
   return (
     <div className='space-y-2'>
@@ -19,6 +19,7 @@ function UserFormEmailField(): ReactElement {
           id='email'
           name='email'
           placeholder='Email...'
+          defaultValue={emailFieldValue}
           minLength={3}
           maxLength={255}
         />
