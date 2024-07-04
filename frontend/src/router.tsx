@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { Navigate, createBrowserRouter } from 'react-router-dom'
 import PageContainer from './layout/PageContainer'
 import NotFoundRoutePage from './pages/404'
 import addPageRoute from './pages/Add'
@@ -11,7 +11,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, ...homePageRoute },
       { path: '/add', ...addPageRoute },
-      { path: '*', element: <NotFoundRoutePage /> }
+      { path: '/404', element: <NotFoundRoutePage /> },
+      { path: '*', element: <Navigate to={'/404'} /> }
     ]
   }
 ])
