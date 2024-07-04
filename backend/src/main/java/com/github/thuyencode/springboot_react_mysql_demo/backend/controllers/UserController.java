@@ -1,7 +1,11 @@
 package com.github.thuyencode.springboot_react_mysql_demo.backend.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,5 +50,19 @@ public class UserController {
 
       return repo.save(user);
     }).orElseThrow(() -> new UserNotFoundException(id));
+  }
+
+  @DeleteMapping("/user/{id}")
+  public Map<String, String> deleteUser(@PathVariable Long id) {
+    if (!repo.existsById(id)) {
+      throw new UserNotFoundException(id);
+    }
+
+    repo.deleteById(id);
+
+    Map<String, String> message = new HashMap<>();
+    message.put("message", String.format("The user with the id '%d' has been deleted", id));
+
+    return message;
   }
 }
