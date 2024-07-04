@@ -1,10 +1,7 @@
-import { type User } from '@/libs/types'
 import { type ReactElement } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import UsersTableRows from './UsersTableRows'
 
 function UsersTable(): ReactElement {
-  const users = useLoaderData() as User[]
-
   return (
     <div className='overflow-x-auto'>
       <table className='table'>
@@ -14,18 +11,12 @@ function UsersTable(): ReactElement {
             <th>Name</th>
             <th>Username</th>
             <th>Email</th>
+            <th></th>
           </tr>
         </thead>
 
         <tbody>
-          {users.map((user) => (
-            <tr key={user.username}>
-              <th>{user.id}</th>
-              <td>{user.name}</td>
-              <td>@{user.username}</td>
-              <td>{user.email}</td>
-            </tr>
-          ))}
+          <UsersTableRows />
         </tbody>
       </table>
     </div>
