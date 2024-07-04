@@ -1,10 +1,10 @@
 import { Icon } from '@iconify/react'
 import { type ReactElement } from 'react'
 import AlertError from './AlertError'
-import useUserFormContext from './hook/useUserFormContext'
+import useUserFormContext from './UserForm.hook'
 
 function UserFormUsernameField(): ReactElement {
-  const { getUsernameFieldError } = useUserFormContext()
+  const { usernameFieldError } = useUserFormContext()
 
   return (
     <div className='space-y-2'>
@@ -24,7 +24,7 @@ function UserFormUsernameField(): ReactElement {
         />
       </div>
 
-      <AlertError errorMessage={getUsernameFieldError()} />
+      <AlertError errorMessage={usernameFieldError} />
     </div>
   )
 }

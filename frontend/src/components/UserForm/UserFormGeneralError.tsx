@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type ReactElement } from 'react'
 import AlertError from './AlertError'
-import useUserFormContext from './hook/useUserFormContext'
+import useUserFormContext from './UserForm.hook'
 
 function UserFormGeneralError(): ReactElement | null {
-  const { getGeneralError } = useUserFormContext()
+  const { generalError } = useUserFormContext()
 
-  return <AlertError errorMessage={getGeneralError()} />
+  return <AlertError errorMessage={generalError} />
 }
 
 export default UserFormGeneralError

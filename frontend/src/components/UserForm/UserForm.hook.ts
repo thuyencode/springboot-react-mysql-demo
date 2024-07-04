@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { UserFormContext, type UserFormContextState } from '../context'
+import { UserFormContext, type UserFormContextState } from './UserForm.context'
 
 export default function useUserFormContext(): UserFormContextState {
   const context = useContext(UserFormContext)
