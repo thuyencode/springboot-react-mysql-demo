@@ -6,8 +6,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.github.thuyencode.springboot_react_mysql_demo.backend.validators.NoWhitespaceValidator;
-
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 

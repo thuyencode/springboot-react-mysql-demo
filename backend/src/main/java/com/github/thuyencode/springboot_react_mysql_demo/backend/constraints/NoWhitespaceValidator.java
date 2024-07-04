@@ -1,6 +1,4 @@
-package com.github.thuyencode.springboot_react_mysql_demo.backend.validators;
-
-import com.github.thuyencode.springboot_react_mysql_demo.backend.constraints.NoWhitespace;
+package com.github.thuyencode.springboot_react_mysql_demo.backend.constraints;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
