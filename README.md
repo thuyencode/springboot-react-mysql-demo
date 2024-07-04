@@ -1,6 +1,6 @@
 # React + Spring Boot demo project
 
-https://github.com/thuyencode/springboot-react-mysql-demo/assets/134030308/03e617b3-10a2-4541-9fea-79f16677933a
+<https://github.com/thuyencode/springboot-react-mysql-demo/assets/134030308/03e617b3-10a2-4541-9fea-79f16677933a>
 
 I did this project following [Code With Arjun](https://www.youtube.com/@CodeWithArjun)'s tutorials on Youtube: **[Full Stack Spring Boot and React CRUD 1.5 hours Course | Full Stack Web App | MySQL | Hibernate](https://youtu.be/4LZKnegAm4g)**.
 
@@ -15,7 +15,7 @@ Some improvements:
 
 | Backend | Frontend |
 | :-: | :-:  |
-| [![Backend](https://skillicons.dev/icons?i=java,spring,mysql)](https://skillicons.dev) | [![Backend](https://skillicons.dev/icons?i=ts,vite,react)](https://skillicons.dev) |
+| [![Backend](https://skillicons.dev/icons?i=java,spring,hibernate,mysql)](https://skillicons.dev) | [![Backend](https://skillicons.dev/icons?i=ts,vite,react,tailwind)](https://skillicons.dev) |
 
 ## How to run
 
