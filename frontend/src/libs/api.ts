@@ -61,3 +61,9 @@ export async function putUser(options: {
     )
     .then((res) => res.data)
 }
+
+export async function deleteUser(options: { id: string }): Promise<void> {
+  await baseApi.delete(`user/${options.id}`).then((res) => {
+    console.log(res.data)
+  })
+}

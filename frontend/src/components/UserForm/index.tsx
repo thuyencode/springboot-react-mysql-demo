@@ -37,7 +37,7 @@ function UserForm({ children }: PropsWithChildren): ReactElement {
     return error.current[key]
   }
 
-  function getUserValue(key: keyof User): string | number | undefined {
+  function getUserValue(key: keyof User): string | undefined {
     if (user.current === undefined) {
       return undefined
     }
@@ -53,9 +53,9 @@ function UserForm({ children }: PropsWithChildren): ReactElement {
           usernameFieldError: getErrorMessage('username'),
           emailFieldError: getErrorMessage('email'),
           generalError: getErrorMessage('message'),
-          nameFieldValue: getUserValue('name') as string | undefined,
-          usernameFieldValue: getUserValue('username') as string | undefined,
-          emailFieldValue: getUserValue('email') as string | undefined
+          nameFieldValue: getUserValue('name'),
+          usernameFieldValue: getUserValue('username'),
+          emailFieldValue: getUserValue('email')
         }}
       >
         {children}
