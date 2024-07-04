@@ -1,4 +1,4 @@
-package com.github.thuyencode.springboot_react_mysql_demo.backend.exception;
+package com.github.thuyencode.springboot_react_mysql_demo.backend.exceptions;
 
 import java.util.HashMap;
 import java.util.Map;
