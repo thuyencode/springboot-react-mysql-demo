@@ -1,12 +1,14 @@
 # React + Spring Boot demo project
 
+https://github.com/thuyencode/springboot-react-mysql-demo/assets/134030308/03e617b3-10a2-4541-9fea-79f16677933a
+
 I did this project following [Code With Arjun](https://www.youtube.com/@CodeWithArjun)'s tutorials on Youtube: **[Full Stack Spring Boot and React CRUD 1.5 hours Course | Full Stack Web App | MySQL | Hibernate](https://youtu.be/4LZKnegAm4g)**.
 
 Some improvements:
 
 * Data validation on both the client and server side
 * Validation errors sent from the server side can be shown on form
-* Use Tailwind CSS instead of Bootstrap 🗿
+* Use Tailwind CSS and DaisyUI instead of Bootstrap 🗿
 * The code looks cleaner to me (very objective, I know)
 
 ## Tech stack
