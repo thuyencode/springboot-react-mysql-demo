@@ -6,9 +6,9 @@ I did this project following [Code With Arjun](https://www.youtube.com/@CodeWith
 
 Some improvements:
 
-* Data validation on both the client and server side
+* Data validation on both the client (using [Valibot](https://valibot.dev)) and server side
 * Validation errors sent from the server side can be shown on form
-* Use Tailwind CSS and DaisyUI instead of Bootstrap 🗿
+* Use [Tailwind CSS](https://tailwindcss.com) and [DaisyUI](https://daisyui.com) instead of Bootstrap 🗿
 * The code looks cleaner to me (very objective, I know)
 
 ## Tech stack
